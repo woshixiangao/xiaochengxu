@@ -3,6 +3,7 @@
     "__type__": "cc.Prefab",
     "_name": "",
     "_objFlags": 0,
+    "_rawFiles": null,
     "data": {
       "__id__": 1
     }
@@ -11,44 +12,9 @@
     "__type__": "cc.Node",
     "_name": "zhangaiwuleft",
     "_objFlags": 0,
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_cascadeOpacityEnabled": true,
     "_parent": null,
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 240,
-      "height": 35
-    },
     "_children": [],
-    "_rotationX": 0,
-    "_rotationY": 0,
-    "_scaleX": 1,
-    "_scaleY": 1,
-    "_position": {
-      "__type__": "cc.Vec2",
-      "x": -220,
-      "y": -78
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_localZOrder": 0,
-    "_globalZOrder": 0,
     "_tag": -1,
-    "_opacityModifyRGB": false,
-    "_reorderChildDirty": false,
-    "_id": "",
     "_active": true,
     "_components": [
       {
@@ -60,7 +26,42 @@
     ],
     "_prefab": {
       "__id__": 4
-    }
+    },
+    "_id": "",
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 240,
+      "height": 35
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": -240,
+      "y": 450
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_opacityModifyRGB": false,
+    "groupIndex": 0
   },
   {
     "__type__": "cc.Sprite",
@@ -89,17 +90,14 @@
     "_atlas": null
   },
   {
-    "__type__": "7045fCuwGxELrvPEGWJGcGG",
+    "__type__": "12c31i+mcdMSqsqm2UCYa+z",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "times": 0,
-    "pengAudio": {
-      "__uuid__": "00e802ae-ddd7-4b2d-be90-276a372c776e"
-    }
+    "times": 1
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -107,8 +105,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "c64388ce-e945-47b1-bab5-30f7bd1f3ed9"
+      "__id__": 0
     },
-    "fileId": "639df/5D1hDF7EyOoRFfxiG"
+    "fileId": "6dwkWjPqZLhoX4CIC0TKP6",
+    "sync": false
   }
 ]

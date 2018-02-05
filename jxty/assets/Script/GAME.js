@@ -7,7 +7,7 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] http://www.cocos.com/docs/creator/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/editors_and_tools/creator-chapters/scripting/life-cycle-callbacks/index.html
-var HeroPlayer = require("HeroPlayer");
+// var HeroPlayer = require("HeroPlayer");
 cc.Class({
     extends: cc.Component,
 
@@ -65,7 +65,9 @@ cc.Class({
 //事件监听
 setEventControl: function(){
     var self = this;
-    var hero = self.player.getComponent(HeroPlayer);//角色绑定控件
+    var hero = self.player.getComponent('HeroPlayer');//角色绑定控件
+    var bg1 = self.bgsprite1.getComponent('bgMove');//角色绑定控件
+    var bg2 = self.bgsprite2.getComponent('bgMove');//角色绑定控件
     cc.eventManager.addListener({
         event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: true,     // 设置是否吞没事件，在 onTouchBegan 方法返回 true 时吞没
@@ -76,10 +78,10 @@ setEventControl: function(){
             
             var locationInNode = target.convertToNodeSpace(touch.getLocation()); 
             
-             cc.log("当前点击坐标"+locationInNode);
+            //  cc.log("当前点击坐标"+locationInNode);
             
         
-            mus.setCp(touch.getLocation());
+            // mus.setCp(touch.getLocation());
 
             hero.node.runAction(hero.setJumpUpAction());//精灵移动
             //cc.log("跳跃：－－－－－－－－");
@@ -93,21 +95,37 @@ setEventControl: function(){
             
         },
         onTouchEnded: function (touch, event) {            // 点击事件结束处理
-            if(self.player.getPositionY() > 0){
-                
-                var height = self.player.getPositionY();//背景需要移动的高度
-                self.player.setPositionY(height/2);
-                self.gainScore();   //  积分更新
-                
-                bg1.node.runAction(bg1.setMoveAction(height));//背景实现向下滚动
-                bg2.node.runAction(bg2.setMoveAction(height));//背景实现向下滚动
-                
+            // cc.log("跳跃后角色坐标：" + self.player.getPosition() );
+            if(self.player.getPositionY()>0){
+                var height =self.player.getPositionY();
+                self.player.setPositionY(height/2)
+                bg1.node.runAction(bg1.setMoveAction(height))
+                bg2.node.runAction(bg2.setMoveAction(height))
             }
-            //  cc.log("跳跃后角色坐标：" + self.player.getPosition() );
-        }
+            
+        },
+
     
     }, self.node)
-}
-
-    // update (dt) {},
+},
+setBgMoveCreate:function(){
+    var overY=this.bgsprite1.getContentSize().height+200
+    if(this.bgsprite1.getPositionY()  < -overY){
+        this.bgsprite1.setPositionY(this.bgsprite2.getPositionY()+this.bgsprite2.getContentSize().height);
+    }
+    if(this.bgsprite2.getPositionY()  < -overY){
+        this.bgsprite2.setPositionY(this.bgsprite1.getPositionY()+this.bgsprite1.getContentSize().height);
+    }
+    // if(this.bgsprite1.getPositionY()  < -500 ){
+    //     this.bgsprite2.setPositionY(this.bgsprite1.getPositionY()+this.bgsprite1.getContentSize().height);
+    // }
+    // if(this.bgsprite2.getPositionY()  < -500 ){
+    //     this.bgsprite1.setPositionY(this.bgsprite2.getPositionY()+this.bgsprite2.getContentSize().height);
+    // }
+},
+update (dt) {
+    this.setBgMoveCreate()
+    // console.log('bg1Y:'+this.bgsprite1.getPositionY())
+    // console.log('bg2Y:'+this.bgsprite2.getPositionY())
+},
 });

@@ -59,7 +59,7 @@ setJumpRunAction: function(){
 //玩家不操作时，角色进行下坠
 heroDownMove: function(){
     //下落
-    var heroDown = cc.moveBy(0.8, cc.p(0, 5));
+    var heroDown = cc.moveBy(0.8, cc.p(0, -5));
     return heroDown;
 },
     // use this for initialization
@@ -70,7 +70,9 @@ heroDownMove: function(){
     },
         // called every frame, uncomment this function to activate update callback
         update: function (dt) {
+            // cc.log("现在角色坐标：" + this.node.getPosition() );
             this.node.runAction(this.heroDownMove());//精灵移动
+            
         },
     // LIFE-CYCLE CALLBACKS:
 
@@ -79,6 +81,8 @@ heroDownMove: function(){
     start () {
 
     },
-
+    sdfds(){
+        
+    }
     // update (dt) {},
 });
