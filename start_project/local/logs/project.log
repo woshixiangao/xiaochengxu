@@ -1,0 +1,68 @@
+2018-02-05T02:59:54.894Z - normal: Load ~/.CocosCreator/settings.json
+2018-02-05T02:59:54.897Z - normal: checking language setting...
+2018-02-05T02:59:54.897Z - normal: Language: zh
+2018-02-05T02:59:56.622Z - success: protocol editor-framework registered
+2018-02-05T02:59:56.622Z - success: protocol app registered
+2018-02-05T02:59:56.622Z - success: protocol theme registered
+2018-02-05T02:59:56.622Z - success: protocol packages registered
+2018-02-05T02:59:56.622Z - success: protocol unpack registerred
+2018-02-05T02:59:56.622Z - success: protocol disable-commonjs registerred
+2018-02-05T02:59:56.815Z - normal: failed to connect login server... skipping login
+2018-02-05T02:59:56.816Z - normal: Check project F:\xiaoyouxi\xiaochengxu\start_project
+2018-02-05T02:59:56.818Z - normal: Initializing Cocos2d
+2018-02-05T02:59:56.984Z - normal: Initializing Asset Database
+2018-02-05T02:59:57.013Z - success: protocol uuid registerred
+2018-02-05T02:59:57.013Z - success: protocol db registerred
+2018-02-05T02:59:57.013Z - success: protocol thumbnail registerred
+2018-02-05T02:59:57.013Z - normal: Loading editor/builtin packages
+2018-02-05T02:59:57.021Z - error: { Error: unable to verify the first certificate
+    at TLSSocket.<anonymous> (_tls_wrap.js:1088:38)
+    at emitNone (events.js:86:13)
+    at TLSSocket.emit (events.js:188:7)
+    at TLSSocket._finishInit (_tls_wrap.js:610:8)
+    at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38) code: 'UNABLE_TO_VERIFY_LEAF_SIGNATURE' }
+    at D:\CocosCreator\resources\app.asar\share\login\lib\user.js:1:1441
+    at ClientRequest.Https.request.on.e (D:\CocosCreator\resources\app.asar\share\login\lib\network.js:1:873)
+    at emitOne (events.js:96:13)
+    at ClientRequest.emit (events.js:191:7)
+    at TLSSocket.socketErrorListener (_http_client.js:358:9)
+    at emitOne (events.js:96:13)
+    at TLSSocket.emit (events.js:191:7)
+    at emitErrorNT (net.js:1283:8)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+2018-02-05T02:59:57.039Z - success: anysdk loaded
+2018-02-05T02:59:57.141Z - success: assets loaded
+2018-02-05T02:59:57.143Z - success: builder loaded
+2018-02-05T02:59:57.146Z - success: cocos-analytics loaded
+2018-02-05T02:59:57.148Z - success: console loaded
+2018-02-05T02:59:57.150Z - success: hierarchy loaded
+2018-02-05T02:59:57.152Z - success: inspector loaded
+2018-02-05T02:59:57.153Z - success: keystore loaded
+2018-02-05T02:59:57.154Z - success: node-library loaded
+2018-02-05T02:59:57.155Z - success: package-asset loaded
+2018-02-05T02:59:57.157Z - success: preferences loaded
+2018-02-05T02:59:57.158Z - success: project-exporter loaded
+2018-02-05T02:59:57.171Z - success: project-importer loaded
+2018-02-05T02:59:57.172Z - success: project-settings loaded
+2018-02-05T02:59:57.174Z - success: ui-kit loaded
+2018-02-05T02:59:57.175Z - success: ui-grid loaded
+2018-02-05T02:59:57.178Z - success: scene loaded
+2018-02-05T02:59:57.179Z - success: sprite-editor loaded
+2018-02-05T02:59:57.181Z - success: store loaded
+2018-02-05T02:59:57.184Z - success: timeline loaded
+2018-02-05T02:59:57.184Z - normal: Loading builtin packages
+2018-02-05T02:59:57.185Z - success: asset-db-debugger loaded
+2018-02-05T02:59:57.186Z - success: code-editor loaded
+2018-02-05T02:59:57.186Z - success: color-picker loaded
+2018-02-05T02:59:57.188Z - success: package-manager loaded
+2018-02-05T02:59:57.190Z - success: sdkbox loaded
+2018-02-05T02:59:57.193Z - success: tester loaded
+2018-02-05T02:59:57.195Z - success: ui-kit-preview-extra loaded
+2018-02-05T02:59:57.197Z - success: ui-kit-preview loaded
+2018-02-05T02:59:57.199Z - success: ui-tree loaded
+2018-02-05T02:59:58.131Z - normal: Initializing project F:\xiaoyouxi\xiaochengxu\start_project
+2018-02-05T02:59:58.133Z - normal: Loading packages
+2018-02-05T02:59:58.137Z - normal: Watching packages
+2018-02-05T02:59:58.147Z - normal: Run Application
+2018-02-05T02:59:58.645Z - success: preview server running at http://localhost:7456
+2018-02-05T03:00:02.313Z - normal: 1.8.1
