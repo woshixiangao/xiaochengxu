@@ -57,7 +57,9 @@ cc.Class({
         this.setEventControl();
         // 初始化计分
         this.score = 0;
-        
+        //添加判断
+
+        this.isMoving = true;
     },
     start () {
 
@@ -123,8 +125,25 @@ setBgMoveCreate:function(){
     //     this.bgsprite1.setPositionY(this.bgsprite2.getPositionY()+this.bgsprite2.getContentSize().height);
     // }
 },
+gameOver:function(){
+    cc.eventManager.removeAllListeners();//移除所有事件监听
+    this.player.stopAllActions(); //停止 player 节点的跳跃动作
+    cc.director.loadScene("GameOver");//切换场景到结束场景
+    // cc.director.loadScene('MainScene')
+    
+},
 update (dt) {
-    this.setBgMoveCreate()
+    this.setBgMoveCreate();
+    if(this.player.getPositionY() <= -cc.view.getVisibleSize().height/2){
+        this.unscheduleAllCallbacks();
+        if(this.isMoving)
+        {
+            this.gameOver();
+            this.isMoving = false;
+        }
+    }
+    //gameOver判断 玩家坠落到屏幕底部游戏结束
+
     // console.log('bg1Y:'+this.bgsprite1.getPositionY())
     // console.log('bg2Y:'+this.bgsprite2.getPositionY())
 },

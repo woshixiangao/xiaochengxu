@@ -7,7 +7,7 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] http://www.cocos.com/docs/creator/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/editors_and_tools/creator-chapters/scripting/life-cycle-callbacks/index.html
-var hero2=require('HeroPlayer')
+// var hero2=require('HeroPlayer')
 cc.Class({
     extends: cc.Component,
 
@@ -49,11 +49,13 @@ cc.Class({
     start () {
 
     },
+    //当前节点世界坐标系下的范围包围盒
     noteBox:function(){
         return this.node.getBoundingBoxToWorld()
     },
     update (dt) {
-        var _label=cc.find('Canvas/hero').getComponent(hero2);
+        var _label=cc.find('MainScene/hero').getComponent('HeroPlayer');
+        //障碍物碰撞框
         if(cc.rectIntersectsRect(_label.node.getBoundingBoxToWorld(), this.noteBox())){
             cc.eventManager.removeAllListeners();//移除所有事件监听
         }            

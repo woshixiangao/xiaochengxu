@@ -21,7 +21,7 @@
     "_active": true,
     "_components": [],
     "_prefab": null,
-    "_id": "bab7CjbJpIcq5TYFGIEzba",
+    "_id": "8136baa2-48ac-42c9-89c8-08595d298046",
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
@@ -44,11 +44,12 @@
     "_localZOrder": 0,
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
-    "groupIndex": 0
+    "groupIndex": 0,
+    "autoReleaseAssets": null
   },
   {
     "__type__": "cc.Node",
-    "_name": "Canvas",
+    "_name": "welcomeScene",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -68,7 +69,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 12
+        "__id__": 14
       }
     ],
     "_prefab": null,
@@ -284,6 +285,9 @@
       },
       {
         "__id__": 11
+      },
+      {
+        "__id__": 13
       }
     ],
     "_prefab": null,
@@ -452,7 +456,11 @@
     },
     "duration": 0.1,
     "zoomScale": 1.2,
-    "clickEvents": [],
+    "clickEvents": [
+      {
+        "__id__": 12
+      }
+    ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
     "_N$normalColor": {
@@ -490,6 +498,24 @@
     "_N$target": {
       "__id__": 7
     }
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 7
+    },
+    "component": "playGo",
+    "handler": "toScene",
+    "customEventData": ""
+  },
+  {
+    "__type__": "dfc2dKBha9FwKDt6PJU+UrT",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 7
+    },
+    "_enabled": true
   },
   {
     "__type__": "cc.Canvas",

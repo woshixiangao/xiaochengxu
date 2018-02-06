@@ -32,6 +32,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
+    //当前节点世界坐标系下的范围包围盒
 
     moveRight:function(){
         // var seq =cc.repeatForever(
@@ -49,6 +50,14 @@ cc.Class({
     start () {
 
     },
-
-    // update (dt) {},
+    noteBox:function(){
+        return this.node.getBoundingBoxToWorld()
+    },
+    update (dt) {
+        var _label=cc.find('MainScene/hero').getComponent('HeroPlayer');
+        //障碍物碰撞框
+        if(cc.rectIntersectsRect(_label.node.getBoundingBoxToWorld(), this.noteBox())){
+            cc.eventManager.removeAllListeners();//移除所有事件监听
+        }
+    },
 });
