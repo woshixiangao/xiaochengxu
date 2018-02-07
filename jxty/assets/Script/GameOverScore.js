@@ -37,7 +37,7 @@ cc.Class({
     disScore:function(){
         var overScores=cc.sys.localStorage.getItem("ScoreDis");//读取本地存储的积分
         //更新 scoreDisplay Label的文字
-        this.Scores.string="Score:"+overScores;//显示
+        this.Scores.string=""+overScores;//显示
     },
     // LIFE-CYCLE CALLBACKS:
 
