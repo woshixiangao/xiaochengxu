@@ -97,7 +97,10 @@
       "__id__": 1
     },
     "_enabled": true,
-    "times": 1
+    "times": 1,
+    "pengAudio": {
+      "__uuid__": "00e802ae-ddd7-4b2d-be90-276a372c776e"
+    }
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -107,7 +110,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "3eFrZP59pDPJPb8aRiTyjv",
+    "fileId": "24bQloQTBKgqhaQmGx2PuD",
     "sync": false
   }
 ]

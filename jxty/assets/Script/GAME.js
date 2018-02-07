@@ -32,6 +32,21 @@ cc.Class({
             default: null,
             type: cc.Label
         },
+        //背景音乐资源
+        bgmusic:{
+            default:null,
+            type:cc.Node
+        },
+        //游戏音乐资源
+        gameAudio:{
+            default:null,
+            url:cc.AudioClip
+        },
+        //游戏结束音乐资源
+        gameOverAudio:{
+            default:null,
+            url:cc.AudioClip
+        }
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -61,6 +76,13 @@ cc.Class({
 
         this.isMoving = true;
     },
+    //积分更新
+    gainScore:function(){
+        this.score+=1;
+        // 更新 scoreDisplay Label 的文字
+        this.scoreDisplay.string = "Score:"+ this.score.toString();  
+        cc.sys.localStorage.setItem("ScoreDis" ,this.scoreDisplay.string);//本地存储      
+    },
     start () {
 
     },
@@ -70,6 +92,7 @@ setEventControl: function(){
     var hero = self.player.getComponent('HeroPlayer');//角色绑定控件
     var bg1 = self.bgsprite1.getComponent('bgMove');//角色绑定控件
     var bg2 = self.bgsprite2.getComponent('bgMove');//角色绑定控件
+    var mus = self.bgmusic.getComponent('AudioScript');//音乐绑定控件
     cc.eventManager.addListener({
         event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: true,     // 设置是否吞没事件，在 onTouchBegan 方法返回 true 时吞没
@@ -80,8 +103,8 @@ setEventControl: function(){
             
             var locationInNode = target.convertToNodeSpace(touch.getLocation()); 
             
-            //  cc.log("当前点击坐标"+locationInNode);
-            
+            cc.log("当前点击坐标"+locationInNode);
+            mus.setCp(touch.getLocation())
         
             // mus.setCp(touch.getLocation());
 
@@ -101,6 +124,7 @@ setEventControl: function(){
             if(self.player.getPositionY()>0){
                 var height =self.player.getPositionY();
                 self.player.setPositionY(height/2)
+                self.gainScore()
                 bg1.node.runAction(bg1.setMoveAction(height))
                 bg2.node.runAction(bg2.setMoveAction(height))
             }
@@ -133,6 +157,7 @@ gameOver:function(){
     
 },
 update (dt) {
+    var mus = this.bgmusic.getComponent('AudioScript');//音乐绑定控件
     this.setBgMoveCreate();
     if(this.player.getPositionY() <= -cc.view.getVisibleSize().height/2){
         this.unscheduleAllCallbacks();
@@ -141,6 +166,13 @@ update (dt) {
             this.gameOver();
             this.isMoving = false;
         }
+    }
+    if(mus.isOpen){
+        cc.log('恢复现在正在播放的所有音效')
+        cc.audioEngine.resumeAllEffects()
+    }else{
+        cc.log('暂停现在正在播放的所有音效')
+        cc.audioEngine.pauseAllEffects()
     }
     //gameOver判断 玩家坠落到屏幕底部游戏结束
 

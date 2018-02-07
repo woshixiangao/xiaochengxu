@@ -13,6 +13,11 @@ cc.Class({
 
     properties: {
         times:0,//控制时间
+        //碰撞音效资源
+        pengAudio:{
+            default:null,
+            url:cc.AudioClip
+        }
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -43,7 +48,8 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.moveRight()
+        this.moveRight();
+        cc.audioEngine.setEffectsVolume ( 0.2 );//设置音效声音大小        
     },
 
     start () {
