@@ -7,7 +7,7 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] http://www.cocos.com/docs/creator/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/editors_and_tools/creator-chapters/scripting/life-cycle-callbacks/index.html
-
+var com = require("Common");
 cc.Class({
     extends: cc.Component,
 
@@ -50,7 +50,7 @@ cc.Class({
         this.node.runAction(seq);
     },
     onLoad () {
-        this.moveRight();
+        // this.moveRight();
         cc.audioEngine.setEffectsVolume ( 0.2 );//设置音效声音大小   
     },
     start () {
@@ -63,7 +63,11 @@ cc.Class({
         var _label=cc.find('MainScene/hero').getComponent('HeroPlayer');
         //障碍物碰撞框
         if(cc.rectIntersectsRect(_label.node.getBoundingBoxToWorld(), this.noteBox())){
-            cc.eventManager.removeAllListeners();//移除所有事件监听
+            if(com.moveY=='down'){
+                console.log('右边：碰撞了：');
+                _label.node.stopAllActions()
+            }
+            // cc.eventManager.removeAllListeners();//移除所有事件监听
         }
     },
 });

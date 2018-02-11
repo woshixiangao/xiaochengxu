@@ -7,7 +7,7 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] http://www.cocos.com/docs/creator/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/editors_and_tools/creator-chapters/scripting/life-cycle-callbacks/index.html
-// var HeroPlayer = require("HeroPlayer");
+var com = require("Common");
 cc.Class({
     extends: cc.Component,
 
@@ -68,6 +68,7 @@ cc.Class({
 
     // onLoad () {},
     onLoad: function () {
+        console.log(com)
         //触摸监听
         this.setEventControl();
         // 初始化计分
@@ -84,7 +85,7 @@ cc.Class({
         cc.sys.localStorage.setItem("ScoreDis" ,this.scoreDisplay.string);//本地存储      
     },
     start () {
-
+        console.log('dsfdsf')
     },
 //事件监听
 setEventControl: function(){
@@ -97,6 +98,7 @@ setEventControl: function(){
         event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: true,     // 设置是否吞没事件，在 onTouchBegan 方法返回 true 时吞没
         onTouchBegan: function (touch, event) {        //实现 onTouchBegan 事件回调函数
+            com.TouchTage='TouchBegan';
             var target = event.getCurrentTarget();    // 获取事件所绑定的 target
             
             // cc.log("点击节点："+ target);
@@ -105,10 +107,11 @@ setEventControl: function(){
             
             cc.log("当前点击坐标"+locationInNode);
             mus.setCp(touch.getLocation())
-        
+             
             // mus.setCp(touch.getLocation());
 
-            hero.node.runAction(hero.setJumpUpAction());//精灵移动
+            // hero.node.runAction(hero.setJumpUpAction());//精灵移动
+            
             //cc.log("跳跃：－－－－－－－－");
             
 
@@ -117,16 +120,21 @@ setEventControl: function(){
             return true;
         },
         onTouchMoved: function (touch, event) {            // 触摸移动时触发
-            
+            com.TouchTage='TouchMoved';
         },
-        onTouchEnded: function (touch, event) {            // 点击事件结束处理
+        onTouchEnded: function (touch, event) {
+            com.TouchTage='TouchEnded';
+            com.moveY='up'
+            hero.setJumpAction();//精灵跳动
+            // hero.node.runAction(hero.setJump());//精灵跳动
+                        // 点击事件结束处理
             // cc.log("跳跃后角色坐标：" + self.player.getPosition() );
             if(self.player.getPositionY()>0){
                 var height =self.player.getPositionY();
-                self.player.setPositionY(height/2)
+                // self.player.setPositionY(height/2)
                 self.gainScore()
-                bg1.node.runAction(bg1.setMoveAction(height))
-                bg2.node.runAction(bg2.setMoveAction(height))
+                // bg1.node.runAction(bg1.setMoveAction(height))
+                // bg2.node.runAction(bg2.setMoveAction(height))
             }
             
         },
@@ -168,11 +176,11 @@ update (dt) {
         }
     }
     if(mus.isOpen){
-        cc.log('恢复现在正在播放的所有音效')
-        cc.audioEngine.resumeAllEffects()
+        // cc.log('恢复现在正在播放的所有音效')
+        // cc.audioEngine.resumeAllEffects()
     }else{
-        cc.log('暂停现在正在播放的所有音效')
-        cc.audioEngine.pauseAllEffects()
+        // cc.log('暂停现在正在播放的所有音效')
+        // cc.audioEngine.pauseAllEffects()
     }
     //gameOver判断 玩家坠落到屏幕底部游戏结束
 
