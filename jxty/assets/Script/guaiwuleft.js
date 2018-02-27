@@ -49,6 +49,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        this.node.group=44;
         // this.moveRight();
         cc.audioEngine.setEffectsVolume ( 0.2 );//设置音效声音大小        
     },
@@ -61,16 +62,19 @@ cc.Class({
         return this.node.getBoundingBoxToWorld()
     },
     update (dt) {
-        var _label=cc.find('MainScene/hero').getComponent('HeroPlayer');
-        //障碍物碰撞框
-        if(cc.rectIntersectsRect(_label.node.getBoundingBoxToWorld(), this.noteBox())){
-            if(com.moveY=='down'){
-                console.log('左边：碰撞了：')
-                _label.node.stopAllActions()
-            }
+
+
+        // var _label=cc.find('MainScene/hero').getComponent('HeroPlayer');
+        // //障碍物碰撞框
+        // if(com.moveY=='down'){
+        // if(cc.rectIntersectsRect(_label.node.getBoundingBoxToWorld(), this.noteBox())){
+            
+        //         // console.log('左边：碰撞了：')
+        //         _label.node.stopAllActions()
+        //     }
            
-            // cc.eventManager.removeAllListeners();//移除所有事件监听
-        }            
+        //     // cc.eventManager.removeAllListeners();//移除所有事件监听
+        // }            
         // this.moveRight() 
         // console.log('=left=')
     },

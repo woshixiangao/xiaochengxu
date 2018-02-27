@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 606,
-      "y": 54,
+      "x": -8,
+      "y": -8,
       "width": 1936,
-      "height": 1100,
+      "height": 1056,
       "layout": {
         "children": [
           {
@@ -16,7 +16,7 @@
             "children": [
               "hierarchy"
             ],
-            "height": 929,
+            "height": 973,
             "type": "panel",
             "width": 366
           },
@@ -29,7 +29,7 @@
                     "children": [
                       "scene"
                     ],
-                    "height": 456,
+                    "height": 477.671875,
                     "type": "panel",
                     "width": 486
                   },
@@ -38,12 +38,12 @@
                     "children": [
                       "node-library"
                     ],
-                    "height": 456,
+                    "height": 477.671875,
                     "type": "panel",
                     "width": 507
                   }
                 ],
-                "height": 456,
+                "height": 477.671875,
                 "type": "dock-h",
                 "width": 996
               },
@@ -53,12 +53,12 @@
                   "console",
                   "timeline"
                 ],
-                "height": 470,
+                "height": 492.328125,
                 "type": "panel",
                 "width": 996
               }
             ],
-            "height": 929,
+            "height": 973,
             "type": "dock-v",
             "width": 996
           },
@@ -67,7 +67,7 @@
             "children": [
               "inspector"
             ],
-            "height": 929,
+            "height": 973,
             "type": "panel",
             "width": 546
           }
@@ -87,8 +87,8 @@
       "main": false,
       "url": "unpack://static/window.html",
       "windowType": "dockable",
-      "x": 433,
-      "y": 363,
+      "x": 578,
+      "y": 373,
       "width": 220,
       "height": 438,
       "layout": {
@@ -130,8 +130,8 @@
       "height": 538
     },
     "assets": {
-      "x": 433,
-      "y": 363,
+      "x": 578,
+      "y": 373,
       "width": 220,
       "height": 438
     },

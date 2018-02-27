@@ -116,6 +116,10 @@ heroDownRight: function(){
 },
     // use this for initialization
     onLoad: function () {
+        var manager = cc.director.getCollisionManager();
+        manager.enabled = true;
+        manager.enabledDebugDraw = true;
+        this.node.group=11;
         //初始化跳跃动作
 // this.jumpAction = this.setJumpAction();
         console.log('====onLoad===')
@@ -127,6 +131,11 @@ heroDownRight: function(){
     },
         // called every frame, uncomment this function to activate update callback
         update: function (dt) {
+            // var mass = rigidbody.getMass(); 
+            // var velocity = rigidbody.linearVelocity;
+            // console.log('mass:'+mass+',velocity:'+velocity)
+            // console.log("角色方向：" + com.moveY+'，playerY:'+this.node.y)
+            // console.log('CC_DEBUG :'+CC_DEBUG)
             if(com.moveY=='down'){
                 // this.node.y=100;
             }
@@ -164,7 +173,6 @@ heroDownRight: function(){
                 // cc.log("角色方向：" + com.moveY );
             }
 
-            cc.log("角色方向：" + com.moveY );
         },
     // LIFE-CYCLE CALLBACKS:
     onDestroy () {
@@ -175,7 +183,7 @@ heroDownRight: function(){
         cc.log("扣除血量")
     },
     onKeyDown: function (event) {
-        console.log('======onKeyDown=====');
+        // console.log('======onKeyDown=====');
         console.log(event.keyCode);
         switch(event.keyCode) {
             case 37:
@@ -188,8 +196,11 @@ heroDownRight: function(){
                 break;
         }
     },
+    onCollisionEnter: function (other, self) {
+        console.log('on collision enter333');
+    },
     onKeyUp: function (event) {
-        console.log('======onKeyDown=====');
+        // console.log('======onKeyDown=====');
         console.log(event.keyCode);
         switch(event.keyCode) {
             case 37:
